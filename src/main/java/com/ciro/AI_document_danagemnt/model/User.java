@@ -24,6 +24,10 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)    // ein User → viele Documents
     private List<Document> documents;
 
+    /*mappedBy = "user" — das ist der Schlüssel. Es sagt JPA:
+▎ "Die Beziehung wird von dem Feld user in der Document-Klasse verwaltet."
+Das bedeutet: JPA erstellt keine zweite Fremdschlüsselspalte. Der Fremdschlüssel user_id existiert nur in der documents-Tabelle — genau richtig.*/
+
     // --- Getters & Setters ---
 
     public Long getId() { return id; }

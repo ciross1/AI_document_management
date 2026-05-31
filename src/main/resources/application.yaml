@@ -1,3 +1,18 @@
 spring:
   application:
     name: AI_document_danagemnt
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ai_document_db   # Datenbankname in MySQL
+    username: ${DB_USERNAME}                                 # dein MySQL-Benutzername
+    password: ${DB_PASSWORD}                                     # dein MySQL-Passwort
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update        # erstellt/aktualisiert Tabellen automatisch (nie in Produktion!)
+    show-sql: true            # zeigt SQL-Befehle in der Konsole (gut zum Lernen)
+    properties:
+      hibernate:
+        format_sql: true      # SQL wird lesbar formatiert in der Konsole
+    database-platform: org.hibernate.dialect.MySQL8Dialect

@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: ai_document_db
+    ports:
+      - "3306:3306"             # lokaler Port : Container Port
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ai_document_db
+    volumes:
+      - mysql_data:/var/lib/mysql   # Daten bleiben erhalten auch nach Neustart
+
+volumes:
+  mysql_data:
