@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AiDocumentDanagemntApplication {
+public class AiDocumentManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AiDocumentDanagemntApplication.class, args);
+		SpringApplication.run(AiDocumentManagementApplication.class, args);
 	}
 
 }
