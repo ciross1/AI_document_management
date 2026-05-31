@@ -8,7 +8,7 @@ public class User {
 
     @Id                                                          // Primärschlüssel
     @GeneratedValue(strategy = GenerationType.IDENTITY)          // AUTO_INCREMENT
-    private Long id;
+    private Long id; // long kann nicht null sein. Long kann null sein
 
     @Column(nullable = false, unique = true)                     // Pflichtfeld, keine Duplikate
     private String email;
