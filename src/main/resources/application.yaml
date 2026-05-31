@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: AI_document_danagemnt
