@@ -2,6 +2,9 @@ spring:
   application:
     name: AI_document_danagemnt
 
+  config:
+    import: optional:file:daten.env[.properties]
+
   datasource:
     url: jdbc:mysql://localhost:3306/ai_document_db   # Datenbankname in MySQL
     username: ${DB_USERNAME}                                 # dein MySQL-Benutzername
@@ -15,4 +18,5 @@ spring:
     properties:
       hibernate:
         format_sql: true      # SQL wird lesbar formatiert in der Konsole
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    # database-platform nicht nötig: Hibernate erkennt MySQL automatisch.
+    # Falls explizit gewünscht: org.hibernate.dialect.MySQLDialect
