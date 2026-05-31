@@ -1,6 +1,7 @@
 package com.ciro.AI_document_danagemnt.model;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity                          // Diese Klasse = Tabelle in der Datenbank
 @Table(name = "users")           // Tabellenname in MySQL
@@ -20,6 +21,9 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)    // ein User → viele Documents
+    private List<Document> documents;
+
     // --- Getters & Setters ---
 
     public Long getId() { return id; }
@@ -33,4 +37,7 @@ public class User {
 
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }
+
+    public List<Document> getDocuments() { return documents; }
+    public void setDocuments(List<Document> documents) { this.documents = documents; }
 }
